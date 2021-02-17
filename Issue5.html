@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+<script type="text/javascript">
+function addition(a,b) {
+    return(a+b);
+}
+function subtraction(a,b) {
+    return(a-b);
+}
+function multiplication(a,b) {
+    return(a*b)
+}
+function division(a,b) {
+    return(a/b)
+}
+let a, b;
+a=Number(prompt("ВВведите число a"));
+b=Number(prompt("ВВведите число b"));
+if (isNaN(a)||isNaN(b)) {alert("Уважаемый пользователь, Вы ошиблись при вводе! Задайте 2 числа. Успехов!")}
+    else {
+        document.write(`<p> ВЫ вели числа ${a} и ${b}.</p><p>${a} + ${b} = ${addition(a,b)}</p><p>${a} - ${b} = ${subtraction(a,b)}</p><p>${a} * ${b} = ${multiplication(a,b)}</p><p>${a} / ${b} = ${division(a,b)}</p>`)
+    }
+</script>
+</body>
+</html>

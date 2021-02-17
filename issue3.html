@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Issue 3</title>
+</head>
+<body>
+<script>
+"use strict";
+let a, b;
+a=Number(prompt("ВВведите число a"));
+b=Number(prompt("ВВведите число b"));
+if (isNaN(a)||isNaN(b)) {alert("Уважаемый пользователь, Вы ошиблись при вводе! Задайте 2 числа. Успехов!")}
+    else if (a>=0&&b>=0) {alert(a-b)}
+        else if (a<=0&&b<=0) {alert(a*b)}
+            else {alert(a+b)}
+</script>
+</body>
+</html>
