@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+<script type="text/javascript">
+"use strict";
+function addition(arg1, arg2) {
+    return(arg1+arg2);
+}
+function subtraction(arg1, arg2) {
+    return(arg1-arg2);
+}
+function multiplication(arg1, arg2) {
+    return(arg1*arg2)
+}
+function division(arg1, arg2) {
+    return(arg1/arg2)
+}
+function mathOperation(arg1, arg2, operation){
+    switch (operation) {
+        case "add":
+        case "addition":
+            return addition(arg1, arg2);
+            break;
+        case "sub":
+        case "subtraction":
+            return subtraction(arg1, arg2);
+            break;
+        case "mul":
+        case "multiplication":
+            return multiplication(arg1, arg2);
+            break;
+        case "div":
+        case "division":
+            return division(arg1, arg2);
+            break;
+        default:
+            alert(" Уважаемый пользователь, я не знаю такой операции")
+    }
+
+}
+let a, b;
+a=Number(prompt("ВВведите число a"));
+b=Number(prompt("ВВведите число b"));
+if (isNaN(a)||isNaN(b)) {alert("Уважаемый пользователь, Вы ошиблись при вводе! Задайте 2 числа. Успехов!")}
+    else {
+        document.write(`<p> Вы ввели числа ${a} и ${b}.</p><p>${a} + ${b} = ${mathOperation(a,b,"addition")}</p><p>${a} - ${b} = ${mathOperation(a,b, "sub")}</p><p>${a} * ${b} = ${mathOperation(a,b,"multiplication")}</p><p>${a} / ${b} = ${mathOperation(a,b,"div")}</p>`)
+    }
+</script>
+</body>
+</html>

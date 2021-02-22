@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+<script type="text/javascript">
+function exponent(base, degree) {
+    if (degree==0) return 1;
+    else return base*exponent(base,degree-1)
+}
+a=+prompt("Введите основание");
+b=+prompt("Введите натуральный показатель");
+if (isNaN(a)||isNaN(b)) {alert("Уважаемый пользователь, Вы ошиблись при вводе! Задайте 2 числа. Успехов!")}
+    else if (b<0||Math.floor(b)!=b) {alert("Уважаемый пользователь, Эта программма вычисляет только степенб с натуральным показателем! Задайте натуральный показатель. Успехов!")}
+        else document.write(`<p>${a} в степени ${b} равно ${exponent(a,b)}</p>`);
+</script>
+</body>
+</html>

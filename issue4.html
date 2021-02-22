@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+<script type="text/javascript">
+"use strict";
+let a;
+a=Math.floor(Number(prompt("ВВведите число a от 0 до 15")));
+if (isNaN(a)||a<0||a>15) {alert("Уважаемый пользователь, Вы ошиблись при вводе! Задайте число от 0 до 15. Успехов!")}
+let str="";
+document.write(`<p>Последовательность чисел от ${a} до 15:</p>`);
+switch (a) {
+	case 0: 
+		str+=(a++) +" ";
+	case 1:
+		str+=(a++)+" ";
+	case 2:
+		str+=(a++)+" ";
+	case 3:
+		str+=(a++)+" ";
+	case 4:
+		str+=(a++)+" ";
+	case 5:
+		str+=(a++)+" ";
+	case 6:
+		str+=(a++)+" ";
+	case 7:
+		str+=(a++)+" ";
+	case 8:
+		str+=(a++)+" ";
+	case 9:
+		str+=(a++)+" ";
+	case 10:
+		str+=(a++)+" ";
+	case 11:
+		str+=(a++)+" ";
+	case 12:
+		str+=(a++)+" ";
+	case 13:
+		str+=(a++)+" ";
+	case 14:
+		str+=(a++)+" ";
+	case 15:
+		str+=(a++)+" ";
+}
+document.write(`<p>${str}</p>`);
+</script>
+</body>
+</html>
