@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piramida</title>
+    <style>
+        body {text-align: center; }
+    </style>
+</head>
+<body>
+    <script>
+        'use strict';
+        let levelnumber=+prompt('Введите число уровней');
+        if (isNaN(levelnumber)||levelnumber<0) alert('Нужно ввести натуральное число');
+            else 
+                for (let i=1; i<=levelnumber;i++){
+                    for (let j=1; j<=i; j++)
+                        document.write('*');
+                    document.write("<br>")
+                }
+
+    </script>
+</body>
+</html>
