@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const products = [ 
+                            { id: 3, price: 127, photos: [ "1.jpg", "2.jpg", ] }, 
+                            { id: 5, price: 499, photos: [] }, 
+                            { id: 10, price: 26, photos: [ "3.jpg" ] }, 
+                            { id: 8, price: 78, },
+                       ];
+                    //    lastprod=products[3];
+                    //    console.log(lastprod.photos.length)
+        /*1 - отобрать товары с фото*/
+        //productsWithPhoto=products.filter(function(product){return (product.photos && product.photos.length>0)});
+        productsWithPhoto=products.filter(product=>product.photos && product.photos.length>0);
+        console.log("1-Товары с фото:\n");
+        console.log(productsWithPhoto);
+        /*2-отсортировать массив объектов по цене*/
+        console.log("2-Товары по возрастанию цены:\n");
+        products.sort((a,b)=>a.price-b.price);
+        console.log(products);
+    </script>
+</body>
+</html>

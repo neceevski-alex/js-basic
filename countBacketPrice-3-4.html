@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const products = [{id: 1, price: 1000}, {id:2, price: 700}, { id: 3, price: 200}, { id: 4, price: 900 } ];
+        customerBacket = [{id: 3, quant: 5}, {id: 1, quant: 2}];
+        console.log(countBacketPrice(customerBacket))
+        function countBacketPrice(backet) {
+            let total=0;
+            backet.forEach(function(product){
+                prodForId=products.find(function(prod){return product.id==prod.id});
+                total+=product.quant*prodForId.price;
+            })
+            return total;
+        }
+        //console.log(products_discount)
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        /*Начинаем с 5 и проверяем лишь нечетные, т.к. 0 и 1 - это особые числа, они не простые и не составные, 2  3 - заведомо простые, а все четные >2 - составные по определению, 
+        в качестве делителя тоже пробуем лишь нечетные, т.к. нечетное чмисло не может делиться на четное без остатка,
+        множество возможных делителей сверху ограничиваем корнем из делимого*/
+        let maxnumber=+prompt('Введите верхнюю границу множества простых чисел');
+        let number;
+        if (isNaN(maxnumber)||maxnumber<0) alert('Нужно ввести натуральное число');
+            else
+                if (maxnumber<=1) alert("0 и 1 - не простые и не составные");
+                    else  
+                        if (maxnumber<5) {
+                            for (number=2; number<=maxnumber; number++) if (number!=4) document.write(number+' ')
+                        }
+                            else {
+                                document.write(2+' '+3+' ');
+                                number=5; 
+                                while (number<=maxnumber) {
+                                    let divisor=3; 
+                                    while (divisor<=number**.5 && number%divisor!=0) {divisor+=2}
+                                    if (divisor>number**.5) 
+                                        document.write(number+' ');
+                                    number+=2;
+                                }
+                            }
+    </script>
+</body>
+</html>
