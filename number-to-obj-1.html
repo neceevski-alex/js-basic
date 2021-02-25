@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function NumtoObj(number){
+            if ((number<0)||(number>999)||(!Number.isInteger(number))||isNaN(number)) {
+                alert('НУжно ввести 3-значное натуральное число!'); 
+                // this.units=null;
+                // this.tens=null;
+                // this.hundreds=null
+                return {}
+            }
+                else {
+                    this.units=number%10;
+                    this.tens=Math.floor(number/10)%10;
+                    this.hundreds=Math.floor(number/100)
+                }
+        }
+        let obj1=new NumtoObj(160);
+        let obj2=new NumtoObj(56.5);
+        let obj3=new NumtoObj("jkgjhg");
+        let obj4=new NumtoObj(1605);
+        let obj5=new NumtoObj(-52);
+    </script>
+</body>
+</html>
