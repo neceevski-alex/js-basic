@@ -6,12 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="product hidden"></div>
-
+    <div id="1" class="product hidden"></div>
+    <div id="2" class="product "></div>
     <!-- Задание.
     1. Вам нужно получить этот div.
     2. Затем обратитесь к списку классов и с помощью метода contains()
     проверьте есть ли класс hidden у этого тега.
      -->
+     <script>
+        'use strict';
+        const elems=document.getElementsByTagName('div');
+        for (let elem of elems){
+            document.write(`У &lt;div id=${elem.id}&gt; класс hidden ${elem.classList.contains('hidden')? "присутствует" : "отсутствует"}.<br>`)
+        }
+      
+    </script>  
 </body>
 </html>

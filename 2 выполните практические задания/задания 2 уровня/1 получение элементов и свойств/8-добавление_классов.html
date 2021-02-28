@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .sign{color: orangered }
+    </style>
 </head>
 <body>
     <b>Lorem, ipsum.</b>
@@ -19,7 +22,12 @@
     -->
 
     <script>
-        
+        'use strict';
+        const elems=document.getElementsByTagName('b');
+        for (let elem of elems)
+            if (!elem.classList.contains('sign'))
+                elem.classList.add('sign')
+      
     </script>
 </body>
 </html>
