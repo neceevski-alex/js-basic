@@ -9,7 +9,10 @@
     <!-- Задание. Выведите содержимое тега title в консоль. -->
 
     <script>
-        
+        'use strict';
+        const title= document.getElementsByTagName('title');
+        console.log(title[0].innerText);
+        console.dir(title[0]);
     </script>
 </body>
 </html>

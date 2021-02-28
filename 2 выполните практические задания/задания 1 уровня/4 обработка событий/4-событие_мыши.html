@@ -12,7 +12,10 @@
     появлялось сообщение: "вы навели на textarea" -->
 
     <script>
-        
+        'use strict';
+        const textarea=document.getElementsByTagName('textarea');
+        textarea[0].addEventListener('mouseover', ()=>console.log('Вы навели на textarea'));
+        textarea[0].addEventListener('mouseout', ()=>console.log('Вы покинули на textarea'))
     </script>
 </body>
 </html>

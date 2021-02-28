@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .one {border: 1px solid black}
+    </style>
 </head>
 <body>
     <ul>
@@ -16,7 +19,11 @@
     <!-- Задание. Найдите тег ul. И добавьте ему класс one. -->
 
     <script>
-        
+        'use strict';
+        const ul=document.getElementsByTagName('ul');
+        ul[0].classList.add('one')
+        // let classes=ul[0].classList;
+        // classes.add('one');
     </script>
 </body>
 </html>

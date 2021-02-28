@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .dropdown-menu {background-color: grey;}
+    </style>
 </head>
 
 <body>
@@ -22,6 +25,11 @@
 
     <!-- Задание. Найдите элемент с классом .dropdown-menu и удалите этот класс, используя свойство classList
     у элемента, и метод remove(). -->
+    <script>
+        'use strict';
+        const menu=document.getElementsByClassName('dropdown-menu');
+        menu[0].classList.remove('dropdown-menu');
+    </script>
 </body>
 
 </html>

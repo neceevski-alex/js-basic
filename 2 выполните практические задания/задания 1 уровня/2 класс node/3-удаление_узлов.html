@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+/*.btn-outline-warning, .btn-outline-dark {display: none;}*/
+    </style>
 </head>
 
 <body>
@@ -22,7 +25,13 @@
     2. Аналогичным образом удалите элемент с классом .btn-outline-dark -->
 
     <script>
-
+        'use strict';
+        // let buttons=document.getElementsByClassName('btn-outline-warning');
+        // buttons[0].remove();
+        // buttons=document.getElementsByClassName('btn-outline-dark');
+        // buttons[0].remove();
+        const buttons=document.querySelectorAll('.btn-outline-warning, .btn-outline-dark');
+        buttons.forEach(button=>button.remove());
     </script>
 </body>
 

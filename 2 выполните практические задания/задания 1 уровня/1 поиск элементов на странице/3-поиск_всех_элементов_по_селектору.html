@@ -29,8 +29,13 @@
     и выведите их в консоль. -->
 
     <script>
-
+        'USE STRICT';
+        const links=document.querySelectorAll('.card-body a.card-link');
+        links.forEach(
+            link=>console.log(link.innerText)
+        );
     </script>
+        
 </body>
 
 </html>

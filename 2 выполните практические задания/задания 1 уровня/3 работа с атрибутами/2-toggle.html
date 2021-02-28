@@ -5,17 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        a.active {color: rgb(11, 219, 91)}
+    </style>
 </head>
 
 <body>
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
+            
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Other</a>
         </li>
     </ul>
 
     <!-- Задание. Найдите элемент с классом .nav-link и используя метод toggle из свойства classList
     у элемента, добавьте или уберите класс .active. -->
+    <script>
+        'use script';
+        const navlinks=document.querySelectorAll('ul.nav a.nav-link');
+        navlinks.forEach(navlink=>navlink.classList.toggle('active'));
+    </script>
 </body>
 
 </html>
