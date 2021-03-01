@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="one" class="btn">Кнопка 1</button>
+    <button id="two" class="btn">Кнопка 2</button>
+<br>
+<h3>Results of click</h3>
+<div id="res"></div>
+    <!-- 
+    Задание.
+    1. Получите кнопку и сохраните ее в переменную.
+    2. Назначьте кнопке обработку клика.
+    3. У функции-обработчика клика сделайте параметр event
+    4. При клике из event.target выведите в консоль: id, имя класса (используйте
+    свойство className), текст на кнопке.
+    -->
+    <script>
+        "use strict";
+        const elems=document.getElementsByTagName('button');
+        for (let elem of elems){
+            elem.addEventListener('click',function(event){
+                let but = event.target;
+                const res=document.getElementById('res');
+                res.innerText=`<button id='${but.id}'> is clicked. Its class is ${but.className}. Text on button is ${but.innerText}.`;
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="first second third">
+        Lorem ipsum dolor sit.
+    </p>
+    <p class="class1 class2">Per aspera ad astrum!</p>
+    <h3>Results of click</h3>
+    <div id="res"></div>
+    <!--    Задание.
+    1. Назначьте обработку клика по параграфу, у функции обработчика объявите
+    параметр event.
+    2. При клике выведите в консоль event.target.classList
+    3. Переберите с помощью forEach event.target.classList и выведите каждый класс
+    в консоль.
+    -->
+    
+    <script>
+        "use strict";
+        const res=document.getElementById('res');
+        const elems=document.getElementsByTagName('p');
+        for (let elem of elems){
+            elem.addEventListener('click', function(event){
+                let parclasses = event.target.classList;
+                console.log(parclasses);
+                // let classes='';
+                // par.classList.forEach(cl=>classes+=cl+' ');
+                let classes=parclasses.toString();
+                res.innerText=`Clicked paragraph has classes: ${classes}.`;
+            })
+        }
+    </script>
+</body>
+</html>
