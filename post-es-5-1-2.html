@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post in ES-5 style</title>
+    <style>
+        .post {width:450px}
+        .author {background-color: dimgrey;}
+        .text {text-align: justify;}
+        .highlighted {color: red}
+        .date {text-align: right;}
+
+    </style>
+</head>
+<body>
+    <script>
+        "use strict";
+        function Post(author, text, date=new Date()) {
+            this.author=author;
+            this.text=text;
+            this.date=date;
+        };
+        Post.prototype.show= function(){
+            document.write(
+                `<div class='post'>
+                    <div class='author'>Author:${this.author}</div>
+                    <div class='text'>Text:<br>${this.text}</div>
+                    <div class='date'>${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()}</div>
+                </div>`
+            );
+        };
+        Post.prototype.edit= function(text) {
+            this.text=text;
+        };
+        function  AttachedPost(author, text, date=new Date(), hl=false) {
+            Post.call(this, author, text, date);
+            this.highlighted=hl;
+        }
+        AttachedPost.prototype=Object.create(Post.prototype);
+        AttachedPost.prototype.constructor=AttachedPost;
+        AttachedPost.prototype.makeTextHighLighted=function() {
+            this.highlighted=true;
+        }
+        AttachedPost.prototype.show2=function(){
+            document.write(
+                `<div class='post'>
+                    <div class='author'>Author:${this.author}</div>
+                    <div class='text${this.highlighted?' highlighted':''}'>Text:<br>${this.text}</div>
+                    <div class='date'>${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()}</div>
+                </div>`
+            );
+        }
+        let post1 = new Post('Alex', 'A rosa upala na lapu Asora');
+        document.write('<h2>Created post:</h2>');
+        post1.show();
+        post1.edit('A roza upala na lapu Azora');
+        document.write('<h2>Edited post:</h2>');
+        post1.show();
+        
+        let atpost=new AttachedPost('Alex','U skal plaksa laskal plaksu');
+        document.write('<h2>Created attached post old show</h2>');
+        atpost.show();
+        atpost.edit('U ckal plakca lackal plakcu');
+        document.write('<h2>Edited attached post new show</h2>');
+        atpost.show2();
+        atpost.makeTextHighLighted();
+        document.write('<h2>Highlighted attached post new show</h2>');
+        atpost.show2();
+    </script>
+</body>
+</html>

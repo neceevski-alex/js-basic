@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product in ES-6 style</title>
+    <style>
+        .pricelist {display:table}
+        .product {display:table-row}
+        .head {font-weight: bold;}
+        .name, .price {display:table-cell}
+        .price {text-align: right}
+    </style>
+</head>
+<body>
+    <script>
+        'use strict';
+        class Product{
+            constructor(name,price) {
+                this.name=name;
+                this.price=price;
+            };
+            show=function() {
+                document.write(`<div class="product"><div class="name">${this.name}</div><div class="price">${this.price}</div></div>`);
+            };
+            makeDiscount=function(percent){
+                this.price*=(1-(percent/100));
+                this.price=+this.price.toFixed(2);
+            }
+        };
+        let books=[];
+        books.push(new Product('А.С. Пушкин Капитанская дочка', 200));
+        books.push(new Product('М.Ю. Лермонтов Мцыри', 250));
+        books.push(new Product ('И.С. Тургенев Ася', 315));
+        document.write('<h2>Книги без скидок</h2><table><thead><td>Книга</td><td>Цена</td></thead>');
+        books.forEach(
+            function(book){
+                document.write(`<tr><td>${book.name}</td><td>${book.price}</td></tr>`);
+            }
+        );
+        document.write('</table>');
+        books[0].makeDiscount(10);
+        books[2].makeDiscount(12);
+        document.write('<h2>Книги с учетом скидок</h2><table><thead><td>Книга</td><td>Цена</td></thead>');
+        books.forEach(
+            function(book){
+                document.write(`<tr><td>${book.name}</td><td>${book.price}</td></tr>`);
+            }
+        );
+        document.write('</table>');
+    </script>
+</body>
+</html>
