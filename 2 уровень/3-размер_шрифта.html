@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="range" min="20" max="100">
+    <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, expedita.
+    </div>
+    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae harum culpa consequatur, magni, quos magnam neque minima accusantium iste nulla sequi molestias dolorem est sint, laborum laboriosam ex qui ullam.
+    Magni, minus nostrum. Ea eum ex, necessitatibus qui sequi nesciunt tempore eos odio repellendus sunt fugiat illum, consequuntur unde vitae quae porro maxime quibusdam eligendi. Quo beatae similique explicabo ipsam.
+    </div><div>Voluptas eum tempora rerum rem unde, dolorem quasi exercitationem dolor sequi? Maiores sit quod ab labore asperiores facere aliquam a maxime porro, pariatur illum unde cupiditate fuga consectetur, deserunt id?
+    Nisi unde cum ut officia dolorem atque. Nisi tenetur consequuntur ea perspiciatis, odit, id sequi, inventore amet expedita quam dicta aliquid libero repellat minima magni quia. Totam cum ea sit.
+    Suscipit quos dolorem, aut ab adipisci repudiandae maxime quis architecto cupiditate velit nisi exercitationem, ex quaerat perspiciatis aliquam harum placeat officiis voluptatibus natus minima culpa itaque! Tenetur nam vero quam?
+    </div><div>Id laboriosam eum quidem dolore animi quos temporibus voluptatum incidunt expedita adipisci nesciunt ipsam libero architecto porro explicabo, accusamus at placeat pariatur alias? Impedit, numquam magnam possimus harum provident dolorum.
+    Ipsa molestias quia iusto consectetur laborum fuga sint eius? Voluptas provident nostrum, hic laudantium obcaecati adipisci animi eaque enim molestias, quas architecto esse culpa error quos, dicta in nulla. Inventore.
+    </div><div>Eos amet ab praesentium quod explicabo, adipisci tempore asperiores id temporibus voluptatibus quo, molestiae minima provident optio laborum quos deleniti natus dolores accusamus maiores quidem. Labore voluptate reprehenderit itaque optio!
+    Error rem ipsa cumque natus iusto, amet veritatis repudiandae est quod itaque beatae optio a odit provident debitis minus accusamus assumenda vel magnam animi. Ipsum minus asperiores labore quaerat ipsa!
+    Veniam voluptatum aliquam commodi dignissimos debitis temporibus ducimus quo eum. Dolorem cumque aperiam, temporibus sint aut sapiente est. Deserunt, ipsam? Illo modi obcaecati odit, temporibus praesentium ipsam eaque tempora facilis.
+    </div>
+    <!-- 
+    Задание. Нужно чтобы при смещении ползунка в div менялся размер шрифта.
+    1. Получите ссылку на input.
+    2. Получите ссылку на div.
+    3. Input'у поставьте прослушивание события 'input';
+        3.1 У функции-обработчика определите параметр event.
+        3.2 Значение input'а читайте из event.target.value.
+    -->
+    
+
+    <script>
+        'use strict';
+        const range=document.querySelector('input[type="range"]');
+        const divs=document.getElementsByTagName('div');
+        range.addEventListener('input', (event)=>{for (let div of divs) div.style.fontSize=event.target.value+'px'});
+        
+    </script>
+</body>
+</html>
